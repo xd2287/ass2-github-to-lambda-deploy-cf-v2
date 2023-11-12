@@ -1,0 +1,11 @@
+version: 0.2
+phases:
+  post_build:
+    commands:
+      - echo "Updating Lambda Function 1..."
+      - aws lambda update-function-code --function-name LF1-index-photos-cf-v11 --zip-file fileb://deployment_package1.zip
+      - echo "Lambda Function 1 DONE!!"
+
+      - echo "Updating Lambda Function 2..."
+      - aws lambda update-function-code --function-name LF2-search-photos-cf-v11 --zip-file fileb://deployment_package2.zip
+      - echo "Lambda Function 2 DONE!!"
